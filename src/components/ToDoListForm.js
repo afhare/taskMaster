@@ -9,8 +9,8 @@ class ToDoListForm extends React.Component {
     render(){
         return(
             <form>
-                <p><label for='task-name'>Task: </label>
-                <input name='task-name' type='text'></input></p>
+                <p><label for='task-title'>Task: </label>
+                <input name='task-title' type='text'></input></p>
                 
                 <p><label for='task-time-estimate'>Estimated Time Needed: </label>
                 <input name='task-time-estimate' type='number'></input>
@@ -23,23 +23,36 @@ class ToDoListForm extends React.Component {
                 
                 <p><label for='task-urgency'>Urgency: </label>
                 <select name='task-urgency'>
-                    <option>None</option>
-                    <option>Low</option>
-                    <option>Medium</option>
-                    <option>High</option>
-                    <option>Vital</option>
+                    <option value='none'>None</option>
+                    <option value='low'>Low</option>
+                    <option value='medium'>Medium</option>
+                    <option value='high'>High</option>
+                    <option value='vital'>Vital</option>
                 </select></p>
                 
                 <p><label for='task-enthusiasm'>Enthusiasm: </label>
                 <select name='task-enthusiasm'>
-                    <option>UGH NO</option>
-                    <option>Nah</option>
-                    <option>Fine</option>
-                    <option>Whatever</option>
-                    <option>Ok</option>
-                    <option>Yes</option>
-                    <option>Heck yeah!</option>
+                    <option value='active-avoid'>Actively Avoiding</option>
+                    <option value='not-interested'>Not Interested</option>
+                    <option value='tolerate-negative'>Tolerate (negative)</option>
+                    <option value='neutral'>Neutral</option>
+                    <option value='tolerate-positive'>Tolerate (positive)</option>
+                    <option value='accept'>Accept</option>
+                    <option value='eager'>Eager</option>
                 </select></p>
+
+                <p><label for='task-category'>Category: </label>
+                <select multiple>
+                    <option value='work'>Work</option>
+                    <option value='personal'>Personal</option>
+                    <option value='other'>Other</option>
+                    <option value='routine'>Routine</option>
+                    <option value='project'>Project</option>
+                    <option value='random'>Random</option>
+                    <option value='essential'>Essential</option>
+                </select></p>
+
+                <input type='submit'/>
             </form>
         )
     }
